@@ -1,0 +1,102 @@
+<navbar></navbar>
+
+  <header class="hero-unit" id="banner">
+    <div class="container">
+      <h2>Welcome!</h2>
+      <!-- <p class="lead">Welcome, fellow ring bearer!</p> -->
+      <img src="assets/images/chair-2-xxl.png" alt="I'm a comfy chair!">
+    </div>
+  </header>
+
+<div class="techSample">
+  <div>
+    <strong> <h5> <b>THE AGE CALCULATOR</b></h5> </strong>
+    <div id="t1">
+
+    </div>
+  </div>
+
+  <div>
+    <h5> <b>THE LIFETIME SUPPLY CALCULATOR</b></h5>
+    <p id="t2">
+
+    </p>
+    <p id="t22">
+
+    </p>
+    <p id="t222">
+
+    </p>
+
+
+
+  </div>
+
+  <div>
+    <h5><b>THE GEOMETRIZER</b></h5>
+    <div id="t3">
+    </div>
+  </div>
+
+    <div id="t4">
+      <h5><b>THE TEMPERATURE CONVERTER</b></h5>
+  <input id="c" onkeyup="celsiusToFahrenheit('C')"> degrees Celsius<br>
+  equals<br>
+  <input id="f" onkeyup="fahrenheitToCelsius('F')"> degrees Fahrenheit
+    </div>
+</div>
+
+
+
+  </body>
+<script>
+  var t1 = document.querySelector('#t1');
+
+  var t2 = document.querySelector('#t2');
+  var t22 = document.querySelector('#t22');
+  var t222 = document.querySelector('#t222');
+
+  var t3 = document.querySelector('#t3');
+  var t4 = document.querySelector('#t4');
+  function calculateAge(currentYear, birthYear)
+  {
+    // currentYear = 2016;
+    // birthYear = 1989;
+   var diff = currentYear - birthYear;
+    // console.log() í return;
+    return "you are either " + (diff-1) + " or " + diff + " years old";
+  }
+  t1.innerHTML = calculateAge(2016, 1989);
+
+  function calculateSupply(age, amountPerDay)
+  {
+    // var element = document.getElementById("t2");
+    var maxAge = 100;
+    var amountPerYear = amountPerDay * 365;
+    var lifetimeAmount = Math.round(((maxAge - age) * amountPerYear));
+    return "You will need " + lifetimeAmount + " to last you until the ripe old age of " + maxAge;
+  }
+  t2.innerHTML = calculateSupply(25, 5);
+
+  t22.innerHTML = calculateSupply(50, 3);
+
+  t222.innerHTML = calculateSupply(70, 7);
+
+
+  var radius = 14;
+  function calcCircumfrence()
+  {
+    var circumference = 2*Math.PI*radius;
+    return "The circumference is " + circumference;
+  }
+  function calcArea()
+  {
+    var area = Math.PI*Math.pow(radius, 2)
+    return "The area is " + area;
+  }
+  t3.innerHTML = calcCircumfrence();
+  t3.innerHTML = calcArea();
+</script>
+
+
+  <footer></footer>
